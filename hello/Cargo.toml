@@ -1,0 +1,10 @@
+[package]
+name = "hello"
+edition.workspace = true
+version.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+serialport.workspace = true
+anyhow.workspace = true

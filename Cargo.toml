@@ -1,0 +1,13 @@
+[workspace]
+resolver = "2"
+members = ["hello"]
+
+[workspace.package]
+version = "0.1.0"
+authors = ["LIMPIX31"]
+license = "MIT"
+edition = "2021"
+
+[workspace.dependencies]
+serialport = "4.3"
+anyhow = "1.0"
