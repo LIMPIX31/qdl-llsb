@@ -245,3 +245,14 @@ pub enum ExecError {
 
 upcast!(ChangeModeError for ExecError);
 upcast!(RawPacketReadError for ExecError);
+
+#[derive(Debug, Error)]
+pub enum DeviceResetError {
+	#[error(transparent)]
+	Io(#[from] IoError),
+
+	#[error(transparent)]
+	EndTransfer(#[from] EndTransferError),
+}
+
+upcast!(RawPacketReadError for DeviceResetError);

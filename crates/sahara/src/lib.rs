@@ -19,7 +19,7 @@ use serialport::Parity;
 use serialport::SerialPort;
 use serialport::StopBits;
 
-use crate::error::ExecError;
+use crate::error::{DeviceResetError, ExecError};
 use crate::error::InvalidPayloadLengthError;
 use crate::protocol::packet;
 use crate::protocol::u8_32;
@@ -172,6 +172,19 @@ impl Sahara {
 		}
 
 		self.mode = mode;
+
+		Ok(())
+	}
+
+	pub fn reset(&mut self) -> Result<(), DeviceResetError> {
+		#[rustfmt::skip]
+		RawPacket::send(
+			&mut self.port, 0x07,
+			Vec::new(),
+		)?;
+
+		let resp = RawPacket::read(&mut self.port, 8)?;
+		Self::assert_success(&resp)?;
 
 		Ok(())
 	}
