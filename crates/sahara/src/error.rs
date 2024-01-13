@@ -215,17 +215,6 @@ pub enum RawPacketReadError {
 }
 
 #[derive(Debug, Error)]
-pub enum ExactMessageReadError {
-	#[error(transparent)]
-	Io(#[from] IoError),
-
-	#[error(transparent)]
-	Broken(#[from] BrokenError),
-}
-
-upcast!(RawPacketReadError for ExactMessageReadError);
-
-#[derive(Debug, Error)]
 pub enum ExecError {
 	#[error(transparent)]
 	Io(#[from] IoError),

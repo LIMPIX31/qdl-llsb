@@ -28,11 +28,11 @@ use crate::protocol::U32;
 
 mod common;
 pub mod error;
-mod protocol;
+pub mod protocol;
 
 #[derive(Debug)]
 pub struct Sahara {
-	port: Box<dyn SerialPort>,
+	pub port: Box<dyn SerialPort>,
 	mode: Mode,
 	version: u32,
 	active: bool,
@@ -161,7 +161,7 @@ impl Sahara {
 				]
 			)?;
 
-			let resp = RawPacket::read(&mut self.port, 8)?;
+			let resp = RawPacket::read(&mut self.port, 16)?;
 			Self::assert_success(&resp)?;
 
 			if resp.kind != 0xB {

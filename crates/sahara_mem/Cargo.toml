@@ -1,11 +1,10 @@
 [package]
-name = "hwid"
+name = "sahara_mem"
 version.workspace = true
 authors.workspace = true
 license.workspace = true
 edition.workspace = true
 
 [dependencies]
-anyhow = "1.0"
-sahara = { path = "../../crates/sahara" }
-sahara_info = { path = "../../crates/sahara_info" }
+thiserror.workspace = true
+sahara = { path = "../sahara" }

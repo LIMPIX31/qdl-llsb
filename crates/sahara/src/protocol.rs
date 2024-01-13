@@ -35,11 +35,16 @@ impl RawPacket {
 	}
 
 	pub fn read(port: &mut impl Read, known_size: usize) -> Result<Self, RawPacketReadError> {
+		println!("Ok");
 		let mut packet = vec![0; known_size];
+		println!("Ok 2");
 		let read = port.read(&mut packet)?;
+		println!("Ok 3: {read}");
 
 		let kind = slice_u32!(packet, 0);
 		let len = slice_u32!(packet, U32) as usize;
+
+		println!("{packet:02X?}");
 
 		if read < len {
 			return Err(BrokenError.into());

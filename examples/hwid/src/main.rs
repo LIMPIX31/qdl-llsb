@@ -2,6 +2,7 @@ use std::time::Duration;
 
 use anyhow::Result;
 use sahara::Sahara;
+use sahara_info::SaharaInfoExt;
 
 const SERIAL_PORT: &str = "/dev/ttyUSB0";
 
@@ -10,9 +11,17 @@ fn main() -> Result<()> {
 	let mut sahara = Sahara::wait_connect(SERIAL_PORT, Duration::from_secs(1))?;
 	println!("Device connected");
 
-	let hwid = sahara.exec(0x02)?;
+	let serial_num = sahara.serial_num();
+	println!("serial_num: {serial_num:08X?}");
 
-	println!("{:02X?}", hwid);
+	let hwid = sahara.hwid();
+	println!("hwid: {hwid:?}");
+
+	let pkhash = sahara.pkhash();
+	println!("pkhash: {pkhash:02X?}");
+
+	let sbl = sahara.sbl_version();
+	println!("sbl: {sbl:08X?}");
 
 	Ok(())
 }
