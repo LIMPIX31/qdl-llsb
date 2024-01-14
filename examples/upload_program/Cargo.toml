@@ -1,5 +1,5 @@
 [package]
-name = "hello_plus"
+name = "upload_program"
 version.workspace = true
 authors.workspace = true
 license.workspace = true

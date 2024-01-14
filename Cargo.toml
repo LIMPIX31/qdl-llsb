@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["crates/sahara", "examples/hello_plus", "examples/hello"]
+members = ["crates/sahara", "examples/hello_plus", "examples/hello", "examples/upload_program", "examples/eg"]
 
 [workspace.package]
 version = "0.1.0"
@@ -12,3 +12,5 @@ edition = "2021"
 serialport = "4.3"
 anyhow = "1.0"
 thiserror = "1.0"
+sahara = { path = "crates/sahara" }
+eg = { path = "examples/eg" }

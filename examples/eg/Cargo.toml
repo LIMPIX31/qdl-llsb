@@ -1,11 +1,10 @@
 [package]
-name = "hello_plus"
+name = "eg"
 version.workspace = true
 authors.workspace = true
 license.workspace = true
 edition.workspace = true
 
 [dependencies]
-eg.workspace = true
+anyhow.workspace = true
 sahara.workspace = true
-anyhow = "1.0"

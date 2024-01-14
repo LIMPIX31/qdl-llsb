@@ -66,7 +66,7 @@ impl Sahara {
 			.parity(Parity::None)
 			.stop_bits(StopBits::One)
 			.data_bits(DataBits::Eight)
-			.timeout(Duration::from_millis(10))
+			.timeout(Duration::from_millis(10000))
 	}
 
 	pub fn connect(dev: &str) -> Result<Self, SerialError> {
