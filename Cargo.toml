@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["crates/sahara", "examples/hwid", "examples/hello", "crates/sahara_mem", "crates/sahara_info", "examples/memory"]
+members = ["crates/sahara", "examples/hello_plus", "examples/hello"]
 
 [workspace.package]
 version = "0.1.0"

@@ -50,12 +50,11 @@ dependencies = [
 ]
 
 [[package]]
-name = "hwid"
+name = "hello_plus"
 version = "0.1.0"
 dependencies = [
  "anyhow",
  "sahara",
- "sahara_info",
 ]
 
 [[package]]
@@ -108,15 +107,6 @@ name = "memchr"
 version = "2.7.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "523dc4f511e55ab87b694dc30d0f820d60906ef06413f93d4d7a1385599cc149"
-
-[[package]]
-name = "memory"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "sahara",
- "sahara_mem",
-]
 
 [[package]]
 name = "nix"
@@ -187,21 +177,6 @@ name = "sahara"
 version = "0.1.0"
 dependencies = [
  "serialport",
- "thiserror",
-]
-
-[[package]]
-name = "sahara_info"
-version = "0.1.0"
-dependencies = [
- "sahara",
-]
-
-[[package]]
-name = "sahara_mem"
-version = "0.1.0"
-dependencies = [
- "sahara",
  "thiserror",
 ]
 

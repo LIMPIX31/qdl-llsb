@@ -1,5 +1,5 @@
 [package]
-name = "memory"
+name = "hello_plus"
 version.workspace = true
 authors.workspace = true
 license.workspace = true
@@ -8,4 +8,3 @@ edition.workspace = true
 [dependencies]
 anyhow = "1.0"
 sahara = { path = "../../crates/sahara" }
-sahara_mem = { path = "../../crates/sahara_mem" }

@@ -1,9 +1,0 @@
-[package]
-name = "sahara_info"
-version.workspace = true
-authors.workspace = true
-license.workspace = true
-edition.workspace = true
-
-[dependencies]
-sahara = { path = "../sahara" }
